@@ -16,7 +16,6 @@
 {
 	int opcion;
 
-	system("cls");
 	printf("Menu de opciones\n\n");
 	printf("1. Primer operador (A = X): ");
 	if(flagOp1==1){

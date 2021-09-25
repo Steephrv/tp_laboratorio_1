@@ -1,0 +1,20 @@
+/*
+ * funciones_Calculadora.h
+ *
+ *  Created on: 21 set. 2021
+ *      Author: Steeph Rios Valdivia
+ */
+
+#ifndef FUNCIONES_CALCULADORA_H_
+#define FUNCIONES_CALCULADORA_H_
+
+int menu(int flagOp1,int flagOp2,int num1, int num2);
+int ingresarEntero( char mensaje[]);
+int segundoNumero();
+int sumar(int num1,int num2);
+int restar(int num1,int num2);
+int multiplicar(int num1,int num2);
+int dividir( int num1, int num2, float* pResultado);
+long long int factorial(int numeroIngresado, int* pResultado);
+
+#endif /* FUNCIONES_CALCULADORA_H_ */

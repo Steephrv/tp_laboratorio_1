@@ -10,31 +10,48 @@
 #include <ctype.h>
 #include "funciones_Calculadora.h"
 
+#define NADA 0
+#define PRIMERINGRESO 1
+#define SEGUNDOINGRESO 2
+#define CALCULAROPERACIONES 3
 
-
- int menu(int flagOp1,int flagOp2,int num1, int num2)
+int menu(int queHizo,int num1, int num2)
 {
 	int opcion;
+	int queHizo= NADA;
 
-	system("cls");
 	printf("Menu de opciones\n\n");
-	printf("1. Primer operador (A = X): ");
-	if(flagOp1==1){
-		printf("A = %d\n",num1);
+	printf("1. Primer operador: ");
+	if(queHizo==PRIMERINGRESO){
+		printf("X = %d\n",num1);
 	}
 	else{
 		printf("\n");
 	}
 
-	printf("2. Segundo operador (B = Y): ");
-	if(flagOp2==1){
-
-		printf("B = %d\n",num2);
+	printf("2. Segundo operador: ");
+	if(queHizo==SEGUNDOINGRESO){
+		printf("Y = %d\n",num2);
 	}
 	else{
 		printf("\n");
 	}
-
+	/*if(queHizo==PRIMERINGRESO)
+	{
+		printf("1. Primer operador (A=X): X = %d\n",num1);
+		printf("2. Segundo operador (B=Y): \n");
+	}
+	else
+	{
+		if(queHizo==SEGUNDOINGRESO){
+			printf("1. Primer operador (A=X): X = %d\n",num1);
+			printf("2. Segundo operador (B=Y): Y = %d\n",num2);
+		}
+		else{
+			printf("1. Primer operador (A=X): \n");
+			printf("2. Segundo operador (B=Y): \n");
+		}
+	}*/
 	printf("3. Calcular todas las operaciones\n");
 	printf("   * Suma (A+B)\n");
 	printf("   * Resta (A-B)\n");
@@ -103,7 +120,7 @@ int dividir( int num1, int num2, float* pResultado)
 	return retorno;
 }
 
-long long int factorial(int numeroIngresado,int* pResultado)
+long long int factorial(int numeroIngresado, int* pResultado)
 {
 
 

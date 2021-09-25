@@ -1,0 +1,175 @@
+/*
+ ============================================================================
+ Name        : TP_[1].c
+ Author      : Steeph Rios Valdivia
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "funciones_Calculadora.h"
+
+
+
+#define NADA 0
+#define PRIMERINGRESO 1
+#define SEGUNDOINGRESO 2
+#define CALCULAROPERACIONES 3
+
+
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char seguir='s';
+	int operador1;
+	int operador2;
+	int resultadoSuma;
+	int resultadoResta;
+	int resultadoMultiplica;
+	float resultadoDivi;
+	int resultadoDivide;
+	int resultadoFactorialOp1;
+	int resultadoFactorialOp2;
+	int resultadoFactOp1;
+	int resultadoFactOp2;
+	int queHizo= NADA;
+
+	do
+	{
+		switch(menu(queHizo,operador1,operador2))
+		{
+			case 1:
+				operador1=ingresarEntero("Ingrese el primer operador: ");
+				queHizo= PRIMERINGRESO;
+				system("pause");
+				break;
+
+			case 2:
+				if(queHizo == PRIMERINGRESO)
+				{
+					operador2=ingresarEntero("Ingrese el segundo operador: ");
+					queHizo=SEGUNDOINGRESO;
+					system("pause");
+				}
+				else
+				{
+					printf("Debe ingresar el primer operador.\n");
+					system("pause");
+				}
+				break;
+
+			case 3:
+				if(queHizo==SEGUNDOINGRESO)
+				{
+					resultadoSuma=sumar(operador1,operador2);
+					resultadoResta=restar(operador1,operador2);
+					resultadoMultiplica=multiplicar(operador1,operador2);
+					resultadoDivide=dividir(operador1,operador2, &resultadoDivi);
+					resultadoFactorialOp1=factorial(operador1, &resultadoFactOp1);
+					resultadoFactorialOp2=factorial(operador2, &resultadoFactOp2);
+					queHizo=CALCULAROPERACIONES;
+					system("pause");
+				}
+				else
+				{
+					if(queHizo==PRIMERINGRESO)
+					{
+						printf("Para calcular las operaciones, se tiene que ingresar el segundo operador.\n");
+						system("pause");
+					}
+					else
+					{
+						printf("Para calcular las operaciones, se tiene que ingresar el primer operador.\n");
+						system("pause");
+					}
+				}
+				break;
+
+			case 4:
+				if(queHizo==CALCULAROPERACIONES)
+				{
+					printf("El resultado de %d + %d es: %d\n",operador1, operador2, resultadoSuma);
+					printf("El resultado de %d - %d es: %d\n",operador1, operador2, resultadoResta);
+					printf("El resultado de %d * %d es: %d\n",operador1, operador2, resultadoMultiplica);
+					if(resultadoDivide==0)
+					{
+						printf("El resultado de %d / %d es: %.2f\n",operador1, operador2, resultadoDivi);
+					}
+					else
+					{
+						printf("No es posible dividir por cero.\n");
+					}
+
+					if(resultadoFactorialOp1==1 && resultadoFactorialOp2==1)
+					{
+						printf("El resultado de %d! es: %d y el resultado de %d! es: %d\n\n",operador1, resultadoFactOp1, operador2, resultadoFactOp2);
+
+					}
+					else
+					{
+						if(resultadoFactorialOp1==1 && resultadoFactorialOp2==0)
+						{
+							printf("El resultado de %d! es: %d y el resultado de %d! es: No se puede realizar el factorial de numeros negativos.\n\n",operador1, resultadoFactOp1, operador2);
+						}
+						else
+						{
+							if(resultadoFactorialOp1==0 && resultadoFactorialOp2==1)
+							{
+								printf("El resultado de %d! es: NO se puede realizar el factorial de numeros negativos y el resultado de %d! es: %d\n\n",operador1, operador2, resultadoFactOp2);
+							}
+							else
+							{
+								printf("No se puede realizar el factorial de numeros negativos.\n\n");
+							}
+						}
+					}
+					queHizo=NADA;
+					system("pause");
+
+				}
+				else
+				{
+					if(queHizo==SEGUNDOINGRESO)
+					{
+						printf("Para mostar los resultados, tiene que calcular las operaciones.\n");
+						system("pause");
+					}
+					else
+					{
+						if(queHizo==PRIMERINGRESO)
+						{
+							printf("Para mostrar los resultados, tienes que ingresar el segundo operador.");
+							system("pause");
+						}
+						else
+						{
+							printf("Para mostrar los resultados tienes que ingresar el primer operador.\n");
+							system("pause");
+						}
+					}
+				}
+
+				break;
+
+			case 5:
+				seguir = 'n';
+				break;
+
+			default:
+			printf("Opcion Invalida\n");
+			system("pause");
+		}
+
+	}while(seguir == 's');
+	printf("\nHASTA PRONTO!!\n");
+
+	return EXIT_SUCCESS;
+}
+
+

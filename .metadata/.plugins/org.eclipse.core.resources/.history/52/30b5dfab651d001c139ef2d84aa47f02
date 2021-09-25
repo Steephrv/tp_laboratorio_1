@@ -16,20 +16,19 @@
 {
 	int opcion;
 
-	system("cls");
 	printf("Menu de opciones\n\n");
-	printf("1. Primer operador (A = X): ");
+	printf("1. Primer operador: ");
 	if(flagOp1==1){
-		printf("A = %d\n",num1);
+		printf("X = %d\n",num1);
 	}
 	else{
 		printf("\n");
 	}
 
-	printf("2. Segundo operador (B = Y): ");
+	printf("2. Segundo operador: ");
 	if(flagOp2==1){
 
-		printf("B = %d\n",num2);
+		printf("Y = %d\n",num2);
 	}
 	else{
 		printf("\n");
@@ -103,7 +102,7 @@ int dividir( int num1, int num2, float* pResultado)
 	return retorno;
 }
 
-long long int factorial(int numeroIngresado,int* pResultado)
+lon long int factorial(int numeroIngresado, int* pResultado)
 {
 
 
