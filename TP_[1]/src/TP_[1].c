@@ -18,8 +18,8 @@ int main(void)
 {
 	setbuf(stdout,NULL);
 
-	int flagOp1=0;
-	int flagOp2=0;
+	int flagOperador1=0;
+	int flagOperador2=0;
 	int flagCase3=0;
 	char seguir='s';
 	int operador1;
@@ -37,23 +37,23 @@ int main(void)
 
 	do
 	{
-		switch(menu(flagOp1,flagOp2,operador1,operador2))
+		switch(menu(flagOperador1,flagOperador2,operador1,operador2))
 		{
 			case 1:
 				operador1=ingresarEntero("Ingrese el primer operador: ");
-				flagOp1= 1;
+				flagOperador1= 1;
 				system("pause");
 				break;
 
 			case 2:
 
 				operador2=ingresarEntero("Ingrese el segundo operador: ");
-				flagOp2=1;
+				flagOperador2=1;
 				system("pause");
 				break;
 
 			case 3:
-				if(flagOp1==1 && flagOp2==1)
+				if(flagOperador1==1 && flagOperador2==1)
 				{
 					resultadoSuma=sumar(operador1,operador2);
 					resultadoResta=restar(operador1,operador2);
@@ -72,7 +72,7 @@ int main(void)
 				break;
 
 			case 4:
-				if(flagOp1==1 && flagOp2==1 && flagCase3==1)
+				if(flagOperador1==1 && flagOperador2==1 && flagCase3==1)
 				{
 					printf("El resultado de %d + %d es: %d\n",operador1, operador2, resultadoSuma);
 					printf("El resultado de %d - %d es: %d\n",operador1, operador2, resultadoResta);
@@ -114,7 +114,7 @@ int main(void)
 				}
 				else
 				{
-					if(flagOp1==1 && flagOp2==1 && flagCase3==0)
+					if(flagOperador1==1 && flagOperador2==1 && flagCase3==0)
 					{
 						printf("Para mostar los resultados, tiene que calcular las operaciones.\n");
 						system("pause");
@@ -137,7 +137,6 @@ int main(void)
 		}
 
 	}while(seguir == 's');
-	printf("\nHASTA PRONTO!!\n");
 
 	return EXIT_SUCCESS;
 }

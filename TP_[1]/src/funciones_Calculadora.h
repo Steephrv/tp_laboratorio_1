@@ -10,13 +10,13 @@
 
 /**
  *
- * @param flagOp1 recibo como parametro la bandera del op1
- * @param flagOp2 recibo como parametro la bandera del op1
+ * @param flagOperador1 recibo como parametro la bandera del op1
+ * @param flagOperador2 recibo como parametro la bandera del op1
  * @param num1  recibo como parametro  un entero
  * @param num2 recibo como parametro un entero
  * @return menu de opciones
  */
-int menu(int flagOp1,int flagOp2,int num1, int num2);
+int menu(int flagOperador1,int flagOperador2,int num1, int num2);
 
 
 /**

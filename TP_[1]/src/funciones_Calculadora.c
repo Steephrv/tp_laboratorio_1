@@ -12,14 +12,14 @@
 
 
 
- int menu(int flagOp1,int flagOp2,int num1, int num2)
+ int menu(int flagOperador1,int flagOperador2,int num1, int num2)
 {
 	int opcion;
 
 	system("cls");
 	printf("Menu de opciones\n\n");
 	printf("1. Primer operador (A = X): ");
-	if(flagOp1==1){
+	if(flagOperador1==1){
 		printf("A = %d\n",num1);
 	}
 	else{
@@ -27,7 +27,7 @@
 	}
 
 	printf("2. Segundo operador (B = Y): ");
-	if(flagOp2==1){
+	if(flagOperador2==1){
 
 		printf("B = %d\n",num2);
 	}
