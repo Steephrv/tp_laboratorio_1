@@ -8,7 +8,7 @@ static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
 /** \brief Crea un nuevo LinkedList en memoria de manera dinamica
- *
+ * \
  *  \param void
  *  \return LinkedList* Retorna (NULL) en el caso de no conseguir espacio en memoria
  *                      o el puntero al espacio reservado
@@ -573,4 +573,6 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*) )
     }
     return filterList;
 }
+
+
 
