@@ -549,7 +549,13 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 }
 
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*) )
+/**
+ * @brief Devuelve un nuevo linkedlist cargado con los elementos que pasa la funcion filtro
+ *
+ * @param this linkedlist a filtrar
+ * @param pFunc  puntero a la funcion que filtra
+ * @return nuevo puntero a linkedlist con los elementos que pasaron la funcion
+ */LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*) )
 {
     LinkedList* filterList = NULL;
     void* elemento = NULL;

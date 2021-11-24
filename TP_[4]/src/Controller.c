@@ -96,11 +96,13 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 	char nombre[128];
 	int horasTrabajadas;
 	int sueldo;
-	int tam = ll_len(pArrayListEmployee);
+	int tam;
 	int index;
 
 	if ( pArrayListEmployee != NULL )
 	{
+		tam = ll_len(pArrayListEmployee);
+
 		printf("     *** Alta de empleado *** \n");
 
 
@@ -572,11 +574,13 @@ int controller_crearNuevaLista(LinkedList* pArrayListEmployee)
     int todoOk = 0;
     int desde;
     int hasta;
-    int tam = ll_len(pArrayListEmployee);
+    int tam;
     LinkedList* newLista = NULL;
 
     if(pArrayListEmployee != NULL)
     {
+    	tam = ll_len(pArrayListEmployee);
+
         printf("\n        *** *NUEVA LISTA ***\n");
         printf("Ingrese el inicio de la subLista: 0 - %d\n", tam);
         scanf("%d", &desde);
@@ -672,11 +676,12 @@ int controller_buscarEmepleadoPorId(LinkedList* pArrayListEmployee, int id)
 {
     int index = -1;
     Employee* auxEmpleado = NULL;
-    int tam = ll_len(pArrayListEmployee);
+    int tam;
     int auxId;
 
     if(pArrayListEmployee != NULL)
     {
+    	tam = ll_len(pArrayListEmployee);
         for(int i = 0; i < tam; i++)
         {
         	auxEmpleado = ll_get(pArrayListEmployee, i);
